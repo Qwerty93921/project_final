@@ -1,0 +1,57 @@
+.large-border{
+    border: 1px solid black;
+    height: 100vh;
+    width: 100vw;
+}
+
+.top-border{
+    border: 1px solid black;
+    height: 80px;
+    width: 100vw;
+    background-color: cyan;
+}
+
+.img-border{
+    border: 1px solid black;
+    height: 80px;
+    width: 240px;
+    background-image: url('');
+    /* высота будет изменяться автоматически, чтобы сохранить пропорции картинки. */
+    /* object-fit: cover; */
+    /* Вписываем фотографию в область */
+    background-size: no-repeat;
+    background-position: center;
+}
+
+.button-container {
+    border: 1px solid black;
+    height: 80px;
+    width: 87%;
+    color: white;
+    background-color: cyan;
+    margin-left: 240px;
+    position: relative;
+    bottom: 83px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button-class {
+    border: 1px solid none;
+    height: 80px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    /* display: inline-block; */
+}
+
+.button-class:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    border: 1px solid cyan;
+    border-bottom: white;
+    border-top: white;
+}

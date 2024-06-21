@@ -16,15 +16,21 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import index, login
+from django.conf import settings
+from django.conf.urls.static import static
+from .views import index, login, home
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', login, name='login'),
     path('/index', index, name='index'),
+    path('/home', home, name='home'),
     # path('', include('final_app.urls')),
     # path('home/', home, name='home'),
     # path('contacts/', contacts, name='contacts'),
     # path('about/', about, name='about'),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

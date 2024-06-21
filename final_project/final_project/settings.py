@@ -9,12 +9,17 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os.path
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+MEDIA_URL = '/media/'
+# Это URL-адрес, по которому будут доступны загруженные медиафайлы.
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# Это абсолютный путь к директории на сервере, где будут сохраняться загруженные медиафайлы.
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/

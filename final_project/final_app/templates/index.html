@@ -11,11 +11,12 @@
         <div class="top-border">
             <div class="img-border"></div>
             <div class="button-container">
-                <div class="button-class">Pizza</div>
-                <div class="button-class">Sushi</div>
-                <div class="button-class">Drinks</div>
-                <div class="button-class">About us</div>
-                <div class="button-class">Logout</div>
+                <a class="button-class" href="{% url 'home' %}">Home</a>
+                <a class="button-class">Pizza</a>
+                <a class="button-class">Sushi</a>
+                <a class="button-class">Drinks</a>
+                <a class="button-class">About us</a>
+                <a class="button-class" href="{% url 'login' %}">Logout</a>
             </div>
         </div>
     </div>

@@ -127,3 +127,24 @@
     justify-content: center;
     align-items: center;
 }
+
+.pay-border-large {
+    border: 1px solid black;
+    height: 100vh;
+    width: 100vw;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pay-border {
+    border: 1px solid black;
+    height: 300px;
+    width: 500px;
+    font-size: 25px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

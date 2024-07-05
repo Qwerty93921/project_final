@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Product
+from django.views.decorators.csrf import csrf_exempt
+from django.http import HttpResponse
 
 # Create your views here.
 
@@ -31,3 +33,19 @@ def basket(request):
 
 def order_create(request):
     return render(request, 'order.html', context={})
+
+
+def pay(request):
+    return render(request, 'payment.html', context={})
+
+
+def process_payment(request):
+    if request.method == "POST":
+        cardholder_name = request.POST.get('cardholder_name')
+        card_number = request.POST.get('card_number')
+        expiry_date = request.POST.get('expiry_date')
+        cvv = request.POST.get('cvv')
+        billing_address = request.POST.get('billing_address')
+        return render(request, 'order_success.html', context={'cardholder_name': cardholder_name})
+    else:
+        return HttpResponse('Invalid request')

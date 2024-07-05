@@ -23,3 +23,11 @@ def product_list_viewer(request):
 
 def about(request):
     return render(request, 'about.html', context={})
+
+
+def basket(request):
+    return render(request, 'basket.html', context={})
+
+
+def order_create(request):
+    return render(request, 'order.html', context={})

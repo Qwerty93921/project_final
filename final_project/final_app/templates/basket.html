@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Basket</title>
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
@@ -21,6 +21,18 @@
                 <a class="button-class" href="{% url 'login' %}">Logout</a>
             </div>
         </div>
+
+        <div class="basket-border-main">
+            <div class="basket-border-top">
+                Your chose products:
+            </div>
+            <div class="basket-border-bottom">
+                ASD
+            </div>
+            <button class="button-order" type="button" id="order_create" href="{% url 'order' %}">Create order</button>
+        </div>
+
     </div>
 </body>
 </html>
+<script src="{% static '/js/script.js' %}"></script>

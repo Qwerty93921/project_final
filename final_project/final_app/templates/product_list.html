@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Index</title>
+    <title>Product list</title>
     <link rel="stylesheet" href="{% static '/css/style.css' %}">
 </head>
 <body>
@@ -20,6 +20,21 @@
                 <a class="button-class" href="{% url 'login' %}">Logout</a>
             </div>
         </div>
-    </div>
+
+    <h1>Product List</h1>
+    <ul>
+        {% for product in products %}
+            <li>
+                <div><b>{{ product.title }}</b></div>
+                <div>{{ product.description }}</div>
+                <div>${{ product.price }}</div>
+            </li>
+        {% endfor %}
+    </ul>
+<!-- <em> </em>- используется для выделения текста курсивом
+<br> - БЕЗ ЗАКРЫВАЮЩЕГО ТЕГА - это перенос строки(как \n)
+<span> </span> - как DIV, но без разрыва строки, для небольших текстов
+-->
+
 </body>
 </html>

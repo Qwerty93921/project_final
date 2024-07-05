@@ -2,6 +2,7 @@
     border: 1px solid black;
     height: 100vh;
     width: 100vw;
+    background-color: gainsboro;
 }
 
 .top-border{
@@ -15,12 +16,13 @@
     border: 1px solid black;
     height: 80px;
     width: 240px;
-    background-image: url('');
-    /* высота будет изменяться автоматически, чтобы сохранить пропорции картинки. */
-    /* object-fit: cover; */
-    /* Вписываем фотографию в область */
-    background-size: no-repeat;
+    /* background-image: url('project_final/final_project/final_app/static/img/pizza_logo.png'); */
+    background-image: url('/static/img/pizza_logo.png');
+    background-size: cover;
+    /* заставляет изображение покрывать весь элемент. */
     background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
 .button-container {
@@ -54,4 +56,14 @@
     border: 1px solid cyan;
     border-bottom: white;
     border-top: white;
+}
+
+.text-border {
+    border: 1px solid black;
+    height: 100vh;
+    width: 100vw;
+    background-color: gainsboro;
+    font-size: 25px;
+    padding-left: 20px;
+    padding-top: 20px;
 }

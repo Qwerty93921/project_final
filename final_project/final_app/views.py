@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from .models import Product
 
 # Create your views here.
 
@@ -15,9 +16,10 @@ def home(request):
     return render(request, 'index.html', context={})
 
 
-# def about(request):
-#     return render(request, 'about.html', context={})
-#
-#
-# def home(request):
-#     return render(request, 'home.html', context={})
+def product_list_viewer(request):
+    products = Product.objects.all()
+    return render(request, 'product_list.html', context={'products': products})
+
+
+def about(request):
+    return render(request, 'about.html', context={})

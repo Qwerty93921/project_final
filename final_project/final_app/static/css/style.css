@@ -28,8 +28,8 @@
     border: 1px solid black;
     height: 80px;
     width: 87%;
-    color: white;
-    background-color: cyan;
+    color: black;
+    background-color: gainsboro;
     margin-left: 240px;
     position: relative;
     bottom: 83px;
@@ -52,7 +52,7 @@
     background-color: white;
     color: black;
     cursor: pointer;
-    border: 1px solid cyan;
+    border: 1px solid none;
     border-bottom: white;
     border-top: white;
 }
@@ -143,6 +143,16 @@
     height: 300px;
     width: 500px;
     font-size: 25px;
+    background-color: gainsboro;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-border {
+    border: 1px solid black;
+    height: 100vh;
+    width: 100vw;
     background-color: gainsboro;
     display: flex;
     justify-content: center;

@@ -31,11 +31,13 @@
                 <div>${{ product.price }}</div>
             </li>
         {% endfor %}
+        <button type="button" id="addToBasket" onclick="productAdderToBasket()">Add to basket</button>
     </ul>
 <!-- <em> </em>- используется для выделения текста курсивом
 <br> - БЕЗ ЗАКРЫВАЮЩЕГО ТЕГА - это перенос строки(как \n)
 <span> </span> - как DIV, но без разрыва строки, для небольших текстов
 -->
-
 </body>
 </html>
+
+<script src="{% static '/js/script.js' %}"></script>

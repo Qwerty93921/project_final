@@ -12,6 +12,7 @@
 
     <div class="pay-border">
         <form action="/process_payment/" method="post">
+            {% csrf_token %}
             <div>
                 <label for="cardholder_name">Cardholder name:</label>
                 <input type="text" id="cardholder_name" name="cardholder_name" placeholder="Your name" required>
@@ -37,7 +38,7 @@
                 <input type="text" id="billing_address" name="billing_address" placeholder="Your address" required>
             </div>
 
-            <button type="submit">Submit Payment</button>
+            <button type="submit" id="payment-submit" onclick="SuccessPayPageSender()">Submit Payment</button>
         </form>
     </div>
 </div>

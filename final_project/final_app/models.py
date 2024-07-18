@@ -11,6 +11,7 @@ class Product(models.Model):
     image = models.ImageField(upload_to='img/', null=True, blank=True)
     description = models.TextField(null=True, blank=True)
     price = models.DecimalField(null=False, blank=False, max_digits=10, decimal_places=2)
+    # decimal_places = 2 - значит 2 цифры после запятой, ВСЕГО 10 цифр
 
     def __str__(self):
         return self.title

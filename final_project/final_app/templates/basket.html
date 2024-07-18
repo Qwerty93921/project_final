@@ -12,9 +12,6 @@
             <div class="img-border"></div>
             <div class="button-container">
                 <a class="button-class" href="{% url 'home' %}">Home</a>
-                <a class="button-class">Pizza</a>
-                <a class="button-class">Sushi</a>
-                <a class="button-class">Drinks</a>
                 <a class="button-class" href="{% url 'about' %}">About us</a>
                 <a class="button-class" href="{% url 'products' %}">Products</a>
                 <a class="button-class" href="{% url 'basket' %}">Basket</a>
@@ -27,9 +24,14 @@
                 Your chose products:
             </div>
             <div class="basket-border-bottom">
-                ASD
+                <ul>
+                    {% for item in basket.values %}
+                        <li>{{ item.title }} - ${{ item.price }} - Quantity: {{ item.quantity }}</li>
+                    {% endfor %}
+                </ul>
+<!--                <a href="{% url 'products' %}">Continue Shopping</a>-->
             </div>
-            <button class="button-order" type="button" id="order_create" href="{% url 'order' %}">Create order</button>
+            <button class="button-order" type="button" id="order_create">Create order</button>
         </div>
 
     </div>

@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import index, login, home, product_list_viewer, about, basket, order_create, pay, process_payment
+from .views import index, login, home, product_list_viewer, about, basket, pay, process_payment_1, process_payment_2, add_to_basket, order_create
 
 
 urlpatterns = [
@@ -29,9 +29,11 @@ urlpatterns = [
     path('products/', product_list_viewer, name='products'),
     path('about/', about, name='about'),
     path('basket/', basket, name='basket'),
-    path('order/', order_create, name="order"),
+    path('order/', order_create, name='order'),
     path('pay/', pay, name='pay'),
-    path('process_payment/', process_payment, name='process_payment'),
+    path('process_payment_1/', process_payment_1, name='process_payment_1'),
+    path('process_payment_2/', process_payment_2, name='process_payment_2'),
+    path('add_to_basket/<int:product_id>/', add_to_basket, name='add_to_basket'),
     # path('', include('final_app.urls')),
     # path('home/', home, name='home'),
     # path('contacts/', contacts, name='contacts'),

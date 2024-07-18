@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+</head>
+<body>
+
+<div class="pay-border-large">
+
+    <div class="pay-border">
+        <form action="/process_payment_1/" method="post">
+            {% csrf_token %}
+            <h2>Enter your location:</h2>
+            <div>
+                <label for="address">Enter your address:</label>
+                <input type="text" id="address" name="address" placeholder="Your address" required>
+            </div>
+
+            <div>
+                <label for="house_number">House number:</label>
+                <input type="number" id="house_number" name="house_number" placeholder="XXX" required>
+            </div>
+
+            <div>
+                <label for="flat_number">Flat number:</label>
+                <input type="number" id="flat_number" name="flat_number" placeholder="XXXX" required>
+            </div>
+
+            <div>
+                <label for="floor_number">Floor number:</label>
+                <input type="number" id="floor_number" name="floor_number" placeholder="XXX" required>
+            </div>
+
+            <button type="submit">Submit Payment</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="{% static '/js/script.js' %}"></script>

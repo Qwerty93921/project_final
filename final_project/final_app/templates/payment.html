@@ -11,7 +11,9 @@
 <div class="pay-border-large">
 
     <div class="pay-border">
-        <form action="/process_payment/" method="post">
+        <form action="/process_payment_2/" method="post">
+            {% csrf_token %}
+            <h2>Enter your credit card:</h2>
             <div>
                 <label for="cardholder_name">Cardholder name:</label>
                 <input type="text" id="cardholder_name" name="cardholder_name" placeholder="Your name" required>

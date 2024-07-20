@@ -18,7 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
-from .views import index, login, home, product_list_viewer, about, basket, pay, process_payment_1, process_payment_2, add_to_basket, order_create
+from .views import (index, login, home, product_list_viewer, about, basket, pay, process_payment_1, process_payment_2,
+                    add_to_basket, order_create, calculate_basket_total)
 
 
 urlpatterns = [

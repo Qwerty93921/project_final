@@ -31,10 +31,15 @@
                 </ul>
 <!--                <a href="{% url 'products' %}">Continue Shopping</a>-->
             </div>
+
+            <div>
+                Total: ${{ request.session.basket_total }}
+            </div>
+
             <button class="button-order" type="button" id="order_create">Create order</button>
         </div>
-
     </div>
+
 </body>
 </html>
 <script src="{% static '/js/script.js' %}"></script>

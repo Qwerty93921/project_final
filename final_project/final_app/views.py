@@ -3,6 +3,7 @@ from .models import Product
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.urls import reverse
+from decimal import Decimal
 # Create your views here.
 
 
@@ -25,18 +26,35 @@ def product_list_viewer(request):
 
 def basket(request):
     basket = request.session.get('basket', {})
+    basket_total = request.session.get('basket_total', '0.00')
+    context = {
+        'basket': basket,
+        'basket_total': basket_total,
+    }
     return render(request, 'basket.html', context={'basket': basket})
 
 
 def add_to_basket(request, product_id):
     product = get_object_or_404(Product, id=product_id)
     basket = request.session.get('basket', {})
+
     if str(product_id) not in basket:
         basket[str(product_id)] = {'title': product.title, 'price': str(product.price), 'quantity': 1}
     else:
         basket[str(product_id)]['quantity'] += 1
+
     request.session['basket'] = basket
+
+    total_price = calculate_basket_total(basket)
+    request.session['basket_total'] = str(total_price)
     return redirect(reverse('products'))
+
+
+def calculate_basket_total(basket):
+    total = Decimal('0.00')
+    for item in basket.values():
+        total += Decimal(item['price']) * item['quantity']
+    return total
 
 
 def about(request):
